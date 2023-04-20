@@ -1,0 +1,249 @@
+@import url(./mixin.less);
+body{
+    font-size: 0.16rem;
+    
+}
+header{
+    height: 0.45rem;
+    line-height: 0.45rem;
+    padding: 0 0.15rem;
+    box-sizing: border-box;
+    border-bottom: 0.005rem solid #999;
+    a{
+        display: block;
+        img{
+            width: 0.2rem;
+            height: 0.2rem;
+            vertical-align: middle;
+        }
+        span{
+            font-size: 0.2rem;
+            font-weight: 700;
+            color: #000;
+            vertical-align: middle;
+        }
+    }
+}
+main{
+    overflow-y: scroll;
+    
+}
+// 主体标题
+main>.title{
+    color: #035803;
+    font-size: 0.26rem;
+    padding-left: 0.15rem;
+    box-sizing: border-box;
+    margin-top: 0.1rem;
+    font-weight: 700;
+}
+// 购物车内容
+main>.all-goods{
+    background-color: #ebe4e4;
+    margin-top:0.1rem;
+    // padding-top: 0.05rem;
+    .goodsbox{
+        background-color: #fff;
+        padding: 0.15rem;
+        box-sizing: border-box;
+        display: flex;
+        margin-bottom: 0.03rem;
+        .noscrollW();
+        .left{
+            width: 40%;
+            display: flex;
+            justify-content: space-between;
+            flex-shrink: 0;
+            input{
+                
+                display: none;
+            }
+            label{
+                width: 0.13rem;
+                height: 0.13rem;
+                position: relative;
+                align-self: center;
+            }
+            .inputCheck(#fff,rgb(4, 102, 4),#fff,rgb(4, 102, 4),rgb(4, 102, 4));
+            // .inputCheck1();
+            img{
+                width: 80%;
+                vertical-align: middle;
+
+            }
+            
+        }
+        .right{
+            width: 60%;
+            padding-left: 0.1rem;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            .tit{
+                font-size: 0.18rem;
+                font-weight: 700;
+                .ellipsis(2);
+                line-height: 1.4;
+            }
+            .info{
+                color: rgb(133, 131, 131);
+                line-height: 1.4;
+            }
+            .bar{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 0.1rem;
+                .price{
+                    color: rgb(239, 12, 12);
+                }
+                .numbox{
+                    .dec,.plus{
+                        background-color: #ebe4e4;
+                        width: 0.2rem;
+                        display: inline-block;
+                        height: 0.2rem;
+                        line-height: 0.2rem;
+                        text-align: center;
+                    }
+                    .val{
+                        padding: 0 0.05rem;
+                    }
+                }
+            }
+        }
+        .remove{
+            flex-shrink: 0;
+            width: ~'calc(15%)';
+            margin-left: 0.15rem;
+            background-color: #e72907;
+            font-size: 0.2rem;
+            color: #fff;
+            font-weight: 700;
+            white-space: wrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+    }
+    .space{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        padding-top: 0.1rem;
+        padding-bottom: 0.1rem;
+        img{
+            width: 70%;
+            display: block;
+
+        }
+        a{
+            margin-top: 0.15rem;
+            border: 0.02rem solid #035803;
+            color: #035803;
+            border-radius: 0.05rem;
+            padding: 0.08rem 0.6rem;
+        }
+    }
+}
+// 市场热卖
+main>.hot-goods{
+    background-color: #ebe4e4;
+    margin-bottom: 0.5rem;
+    &::before{
+        .marginTop();
+    }
+    h2{
+        font-size: 0.25rem;
+        font-weight: 700;
+        margin-top:0.1rem;
+        background-color: #fff;
+        line-height: 2.2;
+        padding: 0 0.15rem;
+        box-sizing: border-box;
+        
+    }
+    .contents{
+        background-color: #fff;
+        padding: 0 0.15rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        .box{
+            width: 48%;
+            margin-bottom: 0.1rem;
+            img{
+                width: 100%;
+                display: block;
+            }
+            .info{
+                line-height: 1.4;
+                .tit{
+                    font-size: 0.18rem;
+                    .ellipsis(1);
+                }
+                .other{
+                    color: #999;
+                    font-size: 0.15rem;
+                    .ellipsis(1);
+                }
+                .pri{
+                    color: #e72907;
+                    font-weight: 700;
+                }
+            }
+        }
+        .box:nth-of-type(2n+1){
+            margin-right: 4%;
+        }
+    }
+}
+// 尾部
+footer{
+    position: fixed;
+    left: 0;
+    right:0;
+    bottom: 0;
+    .footer-wrap{
+        height: 0.45rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0 0 0.15rem;
+        box-sizing: border-box;
+        background-color: #fff;
+        .left{
+            input{
+                display: none;
+            }
+            label{
+                display: inline-block;
+                width: 0.13rem;
+                height: 0.13rem;
+                position: relative;
+                margin-right: 0.05rem
+
+            }
+            .inputCheck(#fff,rgb(4, 102, 4),#fff,rgb(4, 102, 4),rgb(4, 102, 4));
+            
+        }
+        .right{
+            display: flex;
+            height: 0.45rem;
+            line-height: 0.45rem;
+            // align-items: center;
+            .closing{
+                color: #fff;
+                background-color: #e72907;
+                width: 0.88rem;
+                text-align: center;
+            }
+            .totPrice{
+                color: #e72907;
+                padding: 0 0.1rem;
+            }
+        }
+    }
+}

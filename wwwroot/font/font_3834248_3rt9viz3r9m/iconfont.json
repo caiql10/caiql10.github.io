@@ -1,0 +1,44 @@
+{
+  "id": "3834248",
+  "name": "img",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3456463",
+      "name": "首页-填充",
+      "font_class": "shouye-tianchong",
+      "unicode": "e712",
+      "unicode_decimal": 59154
+    },
+    {
+      "icon_id": "6966138",
+      "name": "小组",
+      "font_class": "xiaozu",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "11852261",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "11859278",
+      "name": "市场",
+      "font_class": "shichang",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "18165690",
+      "name": "书籍,图书,阅读,知识",
+      "font_class": "read-full",
+      "unicode": "e89e",
+      "unicode_decimal": 59550
+    }
+  ]
+}

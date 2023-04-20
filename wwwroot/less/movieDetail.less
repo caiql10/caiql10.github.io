@@ -1,0 +1,645 @@
+@import url(./mixin.less);
+body{
+    font-size: 0.16rem;
+    
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+}
+// 头部
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.15rem;
+    height: 0.45rem;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: 0.05rem;
+    a{
+        display: block;
+    }
+    img{
+        width: 0.32rem;
+        height: 0.32rem;
+    }
+    h1{
+        font-size: 0.2rem;
+        color: #fff;
+    }
+    .movie{
+        display: none;
+        img{
+            width: 0.3rem;
+            height: 0.4rem;
+            border-radius: 0.05rem;
+        }
+        .info{
+            color: #fff;
+            padding-left: 0.1rem;
+            line-height: 0.2rem
+        }
+        .start();
+        .score{
+            color: #969693;
+            font-size: 0.13rem;
+        }
+
+    }
+}
+// 电影基本信息
+main>.movie-bascInfo{
+    display: flex;
+    padding: 0.1rem 0.15rem 0;
+    box-sizing: border-box;
+    .left-img{
+        flex-shrink: 0;
+        width: 1rem;
+        height: 1.5rem;
+        border-radius: 0.1rem;
+        overflow: hidden;
+        box-shadow: 0 0 0.1rem rgba(0,0,0,0.5);
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .right-info{
+        padding-left: 0.1rem;
+        h1,h2{
+            color: #fff;
+            font-size: 0.25rem;
+            .ellipsis(1);
+            font-weight: 700;
+            padding-top: 0.05rem;
+        }
+        .tag{
+            font-size: 0.16rem;
+            color: #c5850f;
+            display: flex;
+            font-weight: 700;
+            margin: 0.1rem 0;
+            span{
+                padding: 0.03rem 0.09rem;
+            }
+            .no{
+                background-color: #c3ab7f;
+                border-radius: 0.03rem 0 0 0.03rem;
+            }
+            .nodesc{
+                border-radius: 0 0.03rem 0.03rem 0;
+                background-color: #7d5303;
+            }
+        }
+        .actors{
+            line-height: 1.4;
+            color: rgb(182, 177, 177);
+            font-size: 0.14rem;
+            .ellipsis(2);
+        }
+        .looks{
+            margin-top: 0.05rem;
+            display: flex;
+            justify-content: space-between;
+            p{
+                width: ~'calc(100% / 2 - 0.1rem)';
+                line-height: 0.3rem;
+                font-weight: 700;
+                text-align: center;
+                background-color: #fff;
+                border-radius: 0.05rem;
+                span{
+                    padding-left: 0.2rem;
+                    background-repeat: no-repeat;
+                    background-size: 0.16rem 0.16rem;
+
+                }
+            }
+            .want{
+                span{
+                    background-image: url(../img/ic_mark_todo_s.png);
+                }
+            }
+            .looked{
+                span{
+                    background-image: url(../img/ic_mark_done_s.png);
+                }
+            }
+        }
+    }
+}
+// 豆瓣评分
+main>.movie-grade{
+    margin: 0.15rem;
+    padding: 0.1rem;
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 0.05rem;
+    color: rgba(255,255,255,0.7);
+    .top{
+        span{
+            padding-right: 0.14rem;
+            background-image: url(../img/trademark.png);
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-size: 0.13rem 0.13rem;
+            color: #fff;
+            font-size: 0.18rem;
+        }
+    }
+    .center-box{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0.1rem;
+        margin-top: 0.1rem;
+        .left-score{
+            .start();
+            .star{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .score{
+                    color: #fff;
+                    font-size: 0.35rem;
+                    margin-bottom: 0.05rem;
+                }
+            }
+        }
+        .right{
+            .box{
+                display: flex;
+                font-size: 0;
+                margin-bottom: 0.1rem;
+                display: flex;
+                align-items: center;
+                .sss{
+                    text-align: right;
+                    width: 0.35rem;
+                    white-space: nowrap;
+                    span{
+                        width: 0.07rem;
+                        height: 0.07rem;
+                        display: inline-block;
+                        background-position: center center;
+                        background-size: 0.07rem 0.07rem;
+                        background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDggOCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggNTIuNSAoNjc0NjkpIC0gaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoIC0tPgogICAgPHRpdGxlPkltcG9ydGVkIExheWVycyBDb3B5QDN4PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IumhtemdojEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIG9wYWNpdHk9IjAuNSI+CiAgICAgICAgPGcgaWQ9ImlQaG9uZS04IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjMxLjAwMDAwMCwgLTM1Ni4wMDAwMDApIiBmaWxsPSIjRkZGRkZGIj4KICAgICAgICAgICAgPGcgaWQ9Iue8lue7hC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNS4wMDAwMDAsIDI5My4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxnIGlkPSLnvJbnu4QtMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTg4LjUwMDAwMCwgMzEuNTAwMDAwKSI+CiAgICAgICAgICAgICAgICAgICAgPGcgaWQ9Iue8lue7hCI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNC45ODc5NjYsMzQuNjYwODQ3IEMzNC45Mzk5MDIyLDM0LjQ4MjEzNDEgMzQuNzg4MjcxLDM0LjQ3NTk3OTggMzQuNzg4MjcxLDM0LjQ3NTk3OTggTDMyLjU3Njg4MzEsMzQuMzQ5OTYgTDMxLjczMjczMjUsMzIuMTEyNTkwMSBDMzEuNzMwMDYyMywzMi4xMDQwMDI3IDMxLjY3Njg0MDcsMzIgMzEuNTI3NjA1OCwzMiBDMzEuMzgyMDQ1MywzMiAzMS4zMjM4MDI4LDMyLjA5NzYzMzcgMzEuMzE5ODA4OSwzMi4xMTI1OTAxIEwzMC40ODQ3NjQ0LDM0LjM0MDEwODQgQzMwLjQ4NDc2NDQsMzQuMzQwMTA4NCAyOC4yMDQyMjUsMzQuNDc4MTI2NyAyOC4xOTI2MzEzLDM0LjQ3ODk2MTUgQzI4LjA2Nzc0NzgsMzQuNDg4MDAyMiAyOC4wMTUxODgxLDM0LjYwOTUxMzYgMjguMDA2MjQxNywzNC42NTE5MDE4IEMyNy45ODM0MTk0LDM0Ljc2MDI0NTkgMjguMDI4MjE5NiwzNC44NDI4Mjc5IDI4LjA1OTUwODksMzQuODc1NTMxNSBMMjkuODA2MjM1MiwzNi40MDg1OTMzIEwyOS4yNTQ4MjYsMzguNzQzODM1NSBDMjkuMjU0ODI2LDM4Ljc0MzgzNTUgMjkuMjIzMDgwMiwzOC44NjI0ODQ0IDI5LjM2NDE2NzUsMzguOTU2NTQwMSBDMjkuNDk1Mzk1NywzOS4wNDM5ODgyIDI5LjYxMjM1OTksMzguOTcyNDI2NyAyOS42MTIzNTk5LDM4Ljk3MjQyNjcgTDMxLjUzMzE1MTYsMzcuNzIyOTM5MyBMMzMuNDUwNDc0NCwzOC45NzE5OTc0IEMzMy40NTA0NzQ0LDM4Ljk3MTk5NzQgMzMuNTcyOTg0NCwzOS4wNDU5OTE5IDMzLjcwMjMxODMsMzguOTQyNjA5NCBDMzMuODM0Mjk5NiwzOC44MzcxMjc4IDMzLjc4NjgyOTIsMzguNjkxODEwMyAzMy43ODY4MjkyLDM4LjY5MTgxMDMgTDMzLjIzOTY4NzgsMzYuMzkyMTU4IEwzNC45MzY2MTU4LDM0LjkyNTI0MjkgQzM0LjkzNjYxNTgsMzQuOTI1MjQyOSAzNS4wMzMxMzEzLDM0LjgyODgyNTcgMzQuOTg3OTY2LDM0LjY2MDg0NyIgaWQ9IkltcG9ydGVkLUxheWVycy1Db3B5Ij48L3BhdGg+CiAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=");
+                    }
+                }
+                .line{
+                    margin-left: 0.03rem;
+                    height: 0.06rem;
+                    width: 1.3rem;
+                    border-radius: 0.1rem;
+                    background-color: rgba(255,255,255,0.6);
+                    position: relative;
+                    p{
+                        background-color: #FFAC2C;
+                        position: absolute;
+                        height: 0.06rem;
+                        // width: 70%;
+                        border-radius: 0.1rem;
+                        left: 0;
+                        top: 0;
+                    }
+                }
+            }
+            .peos{
+                font-size: 0.12rem;
+                text-align: right;
+                margin-bottom: 0.1rem;
+            }
+        }
+    }
+    .bottom{
+        position: relative;
+        padding-top: 0.1rem;
+        font-size: 0.14rem;
+        span{
+            padding-right: 0.1rem;
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0.01rem;
+            background-color: rgba(165, 161, 161, 0.21);
+        }
+    }
+}
+// 播放源
+main>.movie-source{
+    padding: 0 0.15rem;
+    box-sizing: border-box;
+    font-size: 0.2rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 0.1rem;
+    .text{
+        padding-left: 0.22rem;
+        font-weight: 700;
+        background-image: url(../img/run.png);
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: 0.2rem 0.2rem;
+    }
+    .source-icon{
+        img{
+            vertical-align: middle;
+            width: 0.2rem;
+            height: 0.2rem;
+        }
+        span{
+            vertical-align: middle;
+        }
+        
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        height: 0.01rem;
+        width: ~'calc(100% - 0.3rem)';
+        margin-left: 0.15rem;
+        display: block;
+        background-color: rgba(255,255,255,0.2);
+        bottom: -0.1rem;
+        left:0
+    }
+}
+// 简介
+main>.movie-introduction{
+    padding: 0 0.15rem;
+    box-sizing: border-box;
+    margin-top: 0.25rem;
+    color: #fff;
+    h2{
+        font-weight: 700;
+        font-size: 0.25rem;
+    }
+    p{
+        margin-top: 0.05rem;
+        font-size: 0.18rem;
+        line-height: 0.28rem;
+        .ellipsis(4);
+    }
+    span{
+        color: #07a81d;
+        font-weight: 700;
+        cursor: pointer;
+    }
+}
+// 演职员
+main>.movie-actors{
+    padding: 0 0.15rem;
+    box-sizing: border-box;
+    color: #fff;
+    margin-top: 0.25rem;
+    h2{
+        font-size: 0.25rem;
+        padding-bottom: 0.15rem;
+        font-weight: 700;
+    }
+    .actor{
+        display: flex;
+        .noscrollW();
+        li{
+            width: 0.8rem;
+            margin-right: 0.15rem;
+            flex-shrink: 0;
+            position: relative;
+            img{
+                width: 100%;
+                height: 1.03rem;
+                border-radius: 0.05rem
+            }
+            .info{
+                p{
+                    .ellipsis(1);
+                    font-size: 0.16rem;
+                    line-height: 1.4;
+                }
+                .play{
+                    color: #969693;
+                }
+            }
+            .indouban{
+                position: absolute;
+                top: 0.8rem;
+                left: 0;
+                background-color: #c5850f;
+                font-size: 0.13rem;
+                padding: 0.02rem 0.04rem;
+            }
+        }
+    }
+}
+// 创作者在豆瓣
+main>.movie-creator{
+    padding: 0 0.15rem;
+    box-sizing: border-box;
+    color: #fff;
+    margin-top: 0.3rem;
+    h2{
+        font-size: 0.25rem;
+        padding-bottom: 0.2rem;
+        font-weight: 700;
+    }
+    ul{
+        .noscrollW();
+        display: flex;
+        li{
+            flex-shrink: 0;
+            width: 100%;
+            padding: 0.1rem;
+            box-sizing: border-box;
+            border-radius: 0.05rem;
+            background-color: rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: space-between;
+            margin-right: 0.15rem;
+            img{
+                width: 0.5rem;
+                height: 0.5rem;
+                border-radius: 50%;
+            }
+            .left{
+                display: flex;
+                .user{
+                    margin-left: 0.1rem;
+                    line-height: 0.25rem;
+                }
+                .other{
+                    color: #969693;
+                }
+            }
+            .right{
+                padding: 0.03rem 0.05rem;
+                border-radius: 0.03rem;
+                border: 1px solid #fff;
+                align-self: flex-start;
+                font-size: 0.14rem;
+                letter-spacing: 0.02rem;
+                span{
+                    white-space: nowrap;
+                }
+            }
+        }
+        li:last-of-type{
+            margin-right: 0;
+        }
+    }
+}
+// 剧照
+main>.movie-stills{
+    padding: 0 0.15rem;
+    box-sizing: border-box;
+    color: #fff;
+    margin-top: 0.3rem;
+    h2{
+        padding-bottom: 0.2rem;
+        font-size: 0.25rem;
+        font-weight: 700;
+    }
+    ul{
+        display: flex;
+        .noscrollW();
+        overflow-x: scroll;
+        li{
+            width: 2.6rem;
+            height: 1.7rem;
+            flex-shrink: 0;
+            margin-right: 0.06rem;
+            border-radius: 0.05rem;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+// 短评
+main>.movie-shorttalk{
+    margin: 0.15rem;
+    padding: 0 0.12rem;
+    box-sizing: border-box;
+    margin-top: 0.35rem;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 0.07rem;
+    color: #fff;
+    h2{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.2rem 0;
+        span:first-of-type{
+            font-size: 0.2rem;
+            font-weight: 700;
+            padding-right:0.18rem;
+            background-image: url(../img/why.png);
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-size: 0.14rem 0.14rem;
+        }
+        span:last-of-type{
+            color: #969693;
+            font-size: 0.13rem;
+        }
+    }
+    .user-con{
+        .box{
+            margin-bottom: 0.2rem;
+            
+            &::after{
+                margin-top: 0.15rem;
+                display: block;
+                width: 100%;
+                height: 0.01rem;
+                content: '';
+                background-color: rgba(165, 161, 161, 0.21);
+            }
+            .user-top{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 0.1rem;
+                .left{
+                    display: flex;
+                    font-size: 0.14rem;
+                    img{
+                        width: 0.4rem;
+                        height: 0.4rem;
+                        border-radius: 50%;
+                    }
+                    .info{
+                        padding-left: 0.1rem;
+                        line-height: 0.2rem;
+                        .start();
+                        .time{
+                            color: #969693;
+                        }
+                    }
+                }
+                .right{
+                    img{
+                        width: 0.2rem;
+                    }
+                }
+            }
+            .page{
+                line-height: 0.25rem;
+                .open{
+                    cursor: pointer;
+                    font-weight: 700
+                }
+                p{
+                    .ellipsis(4);
+                }
+                .icon-dianzan{
+                    display: block;
+                    color: #969693;
+                }
+            }
+            
+        }
+    }
+    .moretalk{
+        padding-bottom: 0.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .row{
+            color: #969693;
+        }
+    }
+}
+// 喜欢这部电影的人也喜欢
+main>.movie-alsolike{
+    padding: 0 0.15rem;
+    box-sizing: border-box;
+    margin-top: 0.3rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    h2{
+        font-size: 0.2rem;
+        font-weight: 700;
+    }
+    .movies{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0.15rem;
+        li{
+            width: ~'calc(100% / 3 - 0.1rem)';
+            flex-shrink: 0;
+            margin-right: ~'calc(0.1rem * 3 / 2)';
+            position: relative;
+            overflow: hidden;
+            img{
+                width: 100%;
+                border-radius: 0.05rem;
+            }
+            .like{
+                width: 0.12rem;
+                padding: 0.05rem;
+                background-color: rgba(0,0,0,0.2);
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 0.05rem 0 0 0.05rem;
+            }
+            .info{
+                line-height: 1.4;
+                p:first-of-type{
+                    .ellipsis(1);
+                }
+                .start();
+            }
+        }
+    }
+}
+// 更多影评
+main>.movie-evaluate{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right:0;
+    background-color: rgb(234, 231, 231);
+    border-radius: 0.1rem 0.1rem 0 0;
+    overflow-y: scroll;
+    .top-line{
+        width: 0.4rem;
+        height: 0.02rem;
+        border-radius: 0.1rem;
+        background-color: #969693;
+        margin: 0.1rem auto 0.1rem;
+    }
+    .title{
+        margin: 0 0.15rem 0 0.15rem;
+        font-size: 0.2rem;
+        color: #969693;
+        padding-bottom: 0.1rem;
+        border-bottom: 0.01rem solid #d6d6d1;
+        
+    }
+    .content{
+        .box{
+            margin-bottom: 0.1rem;
+            background-color: #fff;
+            padding:0.15rem;
+            box-sizing: border-box;
+            .user-top{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 0.1rem;
+                .left{
+                    color: #969693;
+                    display: flex;
+                    align-items: center;
+                    img{
+                        width: 0.3rem;
+                        height: 0.3rem;
+                        border-radius: 50%;
+                       margin-right: 0.05rem;
+                    }
+                    span{
+                        
+                        font-size: 0.14rem;
+                    }
+                    .name{
+                        .ellipsis(1);
+                        width: 0.7rem;
+                        margin-right: 0.1rem;
+                    }
+                    .looked{
+                        font-size: 0.13rem;
+                    }
+                    .start();
+                }
+                .right{
+                    font-size: 0.14rem;
+                    color: #969693;
+                }
+            }
+            .page{
+                line-height: 1.4;
+                .ellipsis(3);
+            }
+            .bottom-tool{
+                color: #969693;
+                margin-top: 0.1rem;
+                span{
+                    padding-right: 0.05rem;
+                }
+            }
+        }
+    }
+}

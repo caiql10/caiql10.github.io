@@ -1,0 +1,803 @@
+@import url(./mixin.less);
+body{
+    font-size: 0.16rem;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+// 头部区域
+header{
+    display: flex;
+    padding: 0 0.1rem;
+    box-sizing: border-box;
+    height: 0.45rem;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: #fff;
+    .list-box{
+        
+        .list-img{
+            width: 0.3rem;
+            height: 0.3rem;
+        }
+        .my-box{
+            // display: none;
+            position: fixed;
+            left: -2.24rem;
+            top: 0;
+            bottom: 0;
+            background-color: rgb(249, 245, 245);
+            width: 2.24rem;
+            z-index: 10;
+            border-radius: 0 0.1rem 0.1rem 0;
+            overflow: scroll;
+            .dis-none{
+                margin: 0.1rem 0 0.2rem;
+                display: flex;
+                justify-content: space-between;
+                padding: 0 0.1rem 0;
+                align-items: center;
+                p{
+                    display: inline-block;
+                    transform: rotateZ(-45deg);
+                    font-size: 0.3rem;
+                    color: #6c6a6a;
+                    cursor: pointer;
+                }
+                img{
+                    width: 0.2rem;
+                    height: 0.2rem;
+                }
+            }
+            .user{
+                display: flex;
+                align-items: center;
+                img{
+                    margin-left: 0.1rem;
+                    width: 0.4rem;
+                    height: 0.4rem;
+                    border-radius: 50%;
+                }
+                span{
+                    font-size: 0.2rem;
+                    padding-left: 0.1rem;
+                }
+            }
+            ul{
+                padding-left: 0.1rem;
+                padding-bottom: 0.1rem;
+                margin-top: 0.1rem;
+                position: relative;
+                li{
+                    line-height: 0.3rem;
+                    img{
+                        vertical-align: middle;
+                        height: 0.17rem;
+                        
+                    }
+                    span{
+                        vertical-align: middle;
+                    }
+                }
+            }
+            .b-line::after{
+                position: absolute;
+                content: '';
+                bottom: 0;
+                left: 0;
+                width: calc(100% - 0.2rem);
+                margin-left: 0.1rem;
+                border-bottom: 0.01rem solid #d1cccc;
+            }
+            .bottom1{
+                background-color: #fff;
+                margin: 0.1rem;
+                padding: 0.1rem 0.1rem;
+                display: flex;
+                flex-wrap: wrap;
+                border-radius: 0.1rem;
+                a{
+                    
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    // justify-content: center;
+                    width: calc(100% / 3 - 0.1rem);
+                    padding: 0 0.05rem 0.1rem;
+                    text-align: center;
+                    img{
+                        width: 0.25rem;
+                        height: 0.25rem;
+                        padding-bottom: 0.05rem;
+                    }
+                    span{
+                        color: #6c6a6a;
+                        height: 1em;
+                        width: 100%;
+                        display: block;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        
+                    }
+                }
+            }
+            .bottom2{
+                display: flex;
+                align-items: center;
+                color: #6c6a6a;
+                justify-content: center;
+                img{
+                    width: 0.2rem;
+                    height: 0.2rem;
+                   
+                }
+            }
+            .bottom{
+                margin-top: 0.5rem;
+        
+            }
+        }
+
+    }
+    
+    .search{
+        height: 0.3rem;
+        background-color: rgba(204, 230, 210,0.5);
+        display: flex;
+        align-items: center;
+        width: 2.1rem;
+        border-radius: 0.1rem;
+        img{
+            width: 0.25rem;
+            height: 0.25rem;
+        }
+        input{
+            outline: none;
+            border: none;
+            padding: 0;
+            background-color: transparent;
+            // background-color: rgba(204, 230, 210,0.5);
+        }
+    }
+    .message{
+        img{
+            width: 0.3rem;
+            height: 0.3rem;
+        }
+    }
+}
+// 豆瓣小icon
+main>.douban-icon1{
+    display: flex;
+    padding: 0 0.15rem;
+    box-sizing: border-box;
+    justify-content: space-between;
+    margin-top: 0.1rem;
+    .box{
+        display: flex;
+        align-items: center;
+        padding: 0 0.05rem 0 0.01rem;
+        border: 1px solid #e9e7e7;
+        border-radius: 0.2rem;
+        .circle{
+            background-color: #03c32b;
+            color: #fff;
+            border-radius: 50%;
+            width: 0.34rem;
+            height: 0.34rem;
+            font-size: 0.12rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        p{
+            font-size: 0.13rem;
+            margin-left: 0.01rem;
+            
+        }
+    }
+
+}
+// 豆瓣轮播
+main>.douban-lunbo{
+    margin: 0.2rem 0.15rem;
+    img{
+        width: 100%;
+        border-radius: 0.1rem;
+    }
+    .swiper-pagination-bullet{
+        width: 0.08rem !important;
+        height: 0.08rem !important;
+        background-color: #fff;
+    }
+}
+// 豆瓣icon列表2
+main>.douban-icon2{
+    padding: 0 0.15rem;
+    box-sizing: border-box;
+    ul{
+        display: flex;
+        justify-content: space-between;
+        li{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .circle{
+                border-radius: 50%;
+                height: 0.4rem;
+                width: 0.4rem;
+                overflow: hidden;
+                position: relative;
+                border: 1px solid #d1cccc;
+
+                background-image: linear-gradient(180deg,rgba(255,255,255,0.5),rgba(255,255,255,0.9));
+                img{
+                    position: absolute;
+                    width: 0.3rem;
+                    height: 0.3rem;
+                    bottom: 0;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                }
+            }
+            p{
+                font-size: 0.13rem;
+                color: #3f3e3e;
+                margin-top: 0.05rem;
+            }
+        }
+    }
+
+}
+// 团购
+main>.groupPurchase{
+    padding: 0 0.15rem;
+    box-sizing: border-box;
+    display: flex;
+    .purchase{
+        width: 1.5rem;
+        padding: 0.1rem;
+        box-sizing: border-box;
+        background-image: linear-gradient(180deg,rgba(225, 221, 111, 0.5),transparent,transparent);
+        border-radius: 0.05rem;
+        margin-top: 0.25rem;
+        box-shadow: 0 0 0.1rem rgba(0,0,0,0.2);
+        overflow: hidden;
+        &>.title{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &>span{
+                font-weight: 700;
+            }
+            .right{
+                color: #6c6a6a;
+                font-size: 0.13rem;
+            }
+        }
+        .swiper{
+            margin-top: 0.05rem;
+        }
+        .swiper-slide{
+            width: 1.3rem;
+            height: 1.95rem;
+            position: relative;
+            border-radius: 0.05rem;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            .users{
+                position: absolute;
+                top: 0.05rem;
+                left: 0.05rem;
+                background-color: rgba(0, 0, 0,0.5);
+                color: #fff;
+                font-size: 0.13rem;
+                padding: 0.015rem 0.02rem;
+                border-radius: 0.2rem;
+                display: flex;
+                height: 0.2rem;
+                align-items: center;
+                overflow: hidden;
+                .imgbox{
+                    width: 0.5rem;
+                   overflow: hidden;
+                   position: relative;
+                   height: 100%;
+                   .imgs{
+                        display: flex;
+                        flex-wrap: nowrap;
+                        // width: 100%;
+                   }
+                    img{
+                        margin-top: 0.01rem;
+                        display: block;
+                        width: 0.18rem;
+                        height: 0.18rem;
+                        border-radius: 50%;
+                        margin-right: 0.02rem;
+                      
+                      
+                    }
+                }
+            }
+            .infos{
+                position: absolute;
+                bottom: 0rem;
+                left: 0rem;
+                width: 100%;
+                padding: 0 0 0 0.05rem;
+                background-image: linear-gradient(180deg,transparent,rgb(222, 217, 86),rgb(202, 125, 18));
+                p{
+                    .ellipsis(1);
+                    line-height: 1.4;
+                    color: #fff;
+                }
+                .time{
+                    color: #e68a19;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    .commind{
+        width: 1.5rem;
+        padding: 0.1rem;
+        box-sizing: border-box;
+        background-image: linear-gradient(180deg,rgba(225, 221, 111, 0.5),transparent,transparent);
+        border-radius: 0.05rem;
+        margin-top: 0.25rem;
+        box-shadow: 0 0 0.1rem rgba(0,0,0,0.2);
+        overflow: hidden;
+        &>.title{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &>span{
+                font-weight: 700;
+            }
+            .right{
+                color: #6c6a6a;
+                font-size: 0.13rem;
+                width: 0.4rem;
+                .ellipsis(1);
+                position: relative;
+                span:last-of-type{
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+        .content{
+            margin-top: 0.05rem;
+            .ri{
+                margin-right: 4%;
+            }
+            .box{
+                width: 48%;
+                float: left;
+                
+                &>img{
+                    width: 100%;
+                    border-radius: 0.05rem;
+                }
+                .info{
+                    position: relative;
+                    p{
+                        font-size: 0.13rem;
+                        text-align: center;
+                        .ellipsis(1);
+                        line-height: 1.3;
+                    }
+                    p:last-of-type{
+                        color: #e62719;
+                        span{
+                            font-size: 0.12rem;
+                        }
+                    }
+                    img{
+                        position: absolute;
+                        top: -0.24rem;
+                        right: 0;
+                        width: 0.25rem;
+                    }
+                }
+            }
+        }
+    }
+}
+// 豆瓣豆品
+main>.douban-doupin{
+    background-color: #056319;
+    margin: 0.15rem;
+    position: relative;
+    border-radius: 0.1rem;
+    padding-bottom:0.1rem ;
+    .douban-tag{
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 0.1rem 0 0.05rem 0;
+        padding: 0.08rem 0.05rem;
+        color: #fff;
+        background-color: #056319;
+        z-index: 3;
+    }
+    // 豆瓣豆友轮播
+    .banner-lunbo{
+        padding: 0.05rem;
+        box-sizing: border-box;
+        .swiper-slide{
+            position: relative;
+            .imgbox{
+                width: 100%;
+                padding-bottom: 0.75rem;
+                // background-image: linear-gradient(0deg,#056319,transparent,transparent);
+                img{
+                width: 100%;
+                border-radius: 0.05rem;
+            }
+        }
+        .infobg{
+            position: absolute;
+            width: 100%;
+            box-sizing: border-box;
+            left: 0;
+            bottom: 0rem;
+            padding: 0.2rem 0.1rem;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 4;
+            background-image: linear-gradient(to top,#056319,#056319,#056319,transparent);
+        }
+            .infos{
+                // width: 80%;
+               display: flex;
+            //    justify-content: space-between;
+            border-radius: 0.05rem;
+            overflow: hidden;
+               padding: 0.05rem 0.1rem;
+               box-sizing: border-box;
+                background-color: #fff;
+                // box-shadow: 0 -0.1rem 0.1rem #056319;
+                .left{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    img{
+                        width: 0.5rem;
+                        height: 0.5rem;
+                    }
+                    p{
+                        background-color: rgba(239, 144, 130, 0.5);
+                        color: #e62719;
+                        border-radius: 0.03rem;
+                        padding: 0.02rem;
+                        font-size: 0.13rem;
+                        white-space: nowrap;
+                    }
+                }
+                .right{
+                    position: relative;
+                    line-height: 1.5;
+                    width: 1.7rem;
+                    padding-left: 0.06rem;
+                    .tit{
+                        font-weight: 700;
+                        // font-size: 0.14rem;
+                        .ellipsis(1);
+                        letter-spacing: 0.01rem;
+                    }
+                    .other{
+                        font-size: 0.14rem;
+                        color: #6c6a6a;
+                        .ellipsis(1);
+                    }
+                    .price{
+                        .new{
+                            color: #e62719;
+                            span{
+                                font-size: 0.12rem;
+                            }
+                        }
+                        .old{
+                            color: #6c6a6a;
+                            font-size: 0.12rem;
+                            text-decoration: line-through;
+                        }
+                    }
+                    img{
+                        position: absolute;
+                        right: 0rem;
+                        bottom: 0;
+                        width: 0.2rem;
+                        height: 0.2rem;
+                    }
+                }
+            }
+        }
+        .swiper-pagination{
+             bottom: 1.05rem;
+        }
+        .swiper-pagination-bullet{
+           
+            width: 0.08rem;
+            height: 0.08rem;
+            background-color: #fff;
+        }
+    }
+    // 豆友都在买
+    .douban-allbuy{
+        margin: 0.05rem 0.1rem;
+        color: #fff;
+        display: flex;
+        span{
+            font-size: 0.16rem;
+            font-size: 700;
+            margin-right: 0.05rem;
+        }
+        .users{
+            height: 1.2em;
+            line-height: 1.2em;
+            overflow: hidden;
+            width: 1.6rem;
+            p{
+                background-color: rgba(0,0,0,0.2);
+                border-radius: 0.2rem;
+                padding: 0 0.02rem;
+                font-size: 0;
+                margin-bottom: 0.05rem;
+                white-space: nowrap;
+               img{
+                width: 0.16rem;
+                height: 0.16rem;
+                border-radius: 50%;
+                vertical-align: middle;
+               }
+               span{
+                font-size: 0.15rem;
+                vertical-align: middle;
+               }
+            }
+        }
+    }
+    // 豆瓣豆友最底下的列表
+    .douban-lists{
+        margin: 0.1rem;
+        display: flex;
+        overflow-x: scroll;
+        .noscrollW();
+        .box{
+            width: 1rem;
+            background-color: #fff;
+            border-radius: 0.05rem;
+            flex-shrink: 0;
+            margin-right: 0.1rem;
+            cursor: pointer;
+            padding: 0.05rem;
+            .top{
+               display: flex;
+               align-items: center;
+               flex-direction: column;
+                img{
+                    width: 0.8rem;
+                    height: 0.8rem;
+                }
+                p{
+                    background-color: rgba(239, 144, 130, 0.5);
+                    color: #e62719;
+                    padding: 0.01rem;
+                    font-size: 0.14rem;
+                }
+            }
+            .info{
+                line-height: 1.4;
+                margin-top:0.05rem ;
+                text-align: center;
+                .tit{
+                    .ellipsis(1);
+                    font-size: 0.14rem;
+                    font-weight: 700;
+                }
+                p:last-of-type{
+                    font-size: 0.13rem;
+                    color: #e62719;
+                    span:last-of-type{
+                        font-size: 0.12rem;
+                        color: #6c6a6a;
+                    }
+                }
+            }
+        }
+    }
+}
+// 全部好物
+main>.douban-allgoods{
+    padding: 0 0.15rem;
+    box-sizing: border-box;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+    &>h2{
+        font-size: 0.25rem;
+        font-weight: 700;
+    }
+    .goodsClass{
+        display: flex;
+        overflow-x: scroll;
+        margin-top: 0.1rem;
+        .noscrollW();
+        li{
+            font-weight: 700;
+            padding: 0.04rem 0.06rem;
+            background-color: rgba(0,0,0,0.2);
+            color: #3f3e3e;
+            flex-shrink: 0;
+            border-radius: 0.02rem;
+            margin-right: 0.1rem;
+            cursor: pointer;
+        }
+        li.add{
+            color: #e68a19;
+            background-color: rgba(222, 159, 86, 0.5);
+        }
+    }
+    .all-contents{
+        margin-top: 0.2rem;
+    }
+    .content{
+        display: flex;
+        flex-wrap: wrap;
+        a{
+            flex-shrink: 0;
+            width: 48.5%;
+            display: block;
+            color: #000;
+            border-radius: 0.1rem;
+            box-shadow: 0 0 0.05rem rgba(0,0,0,0.2);
+            margin-bottom: 0.1rem;
+            &>img{
+                width: 100%;
+                border-radius: 0.05rem;
+            }
+            .info{
+                padding-left: 0.05rem;
+                box-sizing: border-box;
+                .tit{
+                    font-weight: 700;
+                    line-height: 1.5;
+                    .ellipsis(2);
+                    span{
+                        background-color: #056319;
+                        border-radius: 0.03rem;
+                        font-size: 0.14rem;
+                        padding: 0.01rem;
+                        color: #fff;
+                    }
+                }
+                .peo{
+                    margin-top: 0.05rem;
+                    font-size: 0.12rem;
+                    span{
+                        color: #6c6a6a;
+                    }
+                    span:first-of-type{
+                        background-color: rgba(230, 39, 25,0.3);
+                        color: #e62719;
+                        padding: 0.015rem 0.035rem;
+                        border-radius: 0.03rem;
+                        margin-right: 0.03rem;
+                    }
+                    
+                }
+                .price{
+                    margin-top: 0.1rem;
+                    margin-bottom: 0.05rem;
+                    display: flex;
+                    justify-content: space-between;
+                    .left{
+                        font-size: 0.18rem;
+                        .newp{
+                            color: #e62719;
+                            font-weight: 700;
+                            span{
+                                font-size: 0.12rem;
+                            }
+                        }
+                        .danwei{
+                            font-size: 0.13rem;
+                            color: #6c6a6a;
+                        }
+                        .oldp{
+                            font-size: 0.13rem;
+                            color: #6c6a6a;
+                            text-decoration: line-through;
+                        }
+                    }
+                    img{
+                        width: 0.18rem;
+                        height: 0.18rem;
+                        margin-right: 0.05rem;
+                    }
+                }
+            }
+        }
+        a:nth-of-type(2n){
+            margin-left: 3%;
+        }
+    }
+    .foodsClass,.woorClass,.none.content{
+        display: none;
+    }
+    .none .text{
+        margin: 0 auto;
+        line-height: 0.5rem;
+        font-weight: 700;
+        font-size: 0.25rem;
+        color: #455f0c;
+    }
+}
+// 侧边购物车
+main>.douban-cast{
+    position: fixed;
+    right: 0.1rem;
+    bottom: 0.5rem;
+    display: block;
+    width: 0.3rem;
+    height: 0.3rem;
+    overflow: hidden;
+    border-radius: 50%;
+    z-index: 3;
+    background-color: #fff;
+    border: 0.005rem solid #000;
+    img{
+        width: 50%;
+        height: 50%;
+        margin-top: 25%;
+        margin-left: 25%;
+    }
+}
+// 尾部导航
+footer{
+    width: 100%;
+    position: fixed;
+    z-index: 9;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    .footer-wrap{
+        padding: 0 0.1rem;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 0.45rem;
+        a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .iconfont{
+                padding-bottom: 0.03rem;
+                font-size: 0.2rem;
+            }
+            span{
+                color: #6c6a6a;
+            }
+            
+        }
+        .index{
+            color: #03c32b;
+        }
+        .icon-shichang{
+            color: #03c32b;
+        }
+    }
+}

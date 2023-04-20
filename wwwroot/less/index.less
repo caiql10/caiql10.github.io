@@ -1,0 +1,470 @@
+@import url(./mixin.less);
+body{
+    font-size: 0.16rem;
+    overflow: hidden;
+    background-color: #d8d8d87a;
+    overflow-y: scroll;
+}
+// 头部区域
+header{
+    display: flex;
+    padding: 0 0.1rem;
+    box-sizing: border-box;
+    height: 0.45rem;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: #fff;
+    .list-box{
+        
+        .list-img{
+            width: 0.3rem;
+            height: 0.3rem;
+        }
+        .my-box{
+            // display: none;
+            position: fixed;
+            left: -2.24rem;
+            top: 0;
+            bottom: 0;
+            background-color: rgb(249, 245, 245);
+            width: 2.24rem;
+            z-index: 10;
+            border-radius: 0 0.1rem 0.1rem 0;
+            overflow: scroll;
+            .dis-none{
+                margin: 0.1rem 0 0.2rem;
+                display: flex;
+                justify-content: space-between;
+                padding: 0 0.1rem 0;
+                align-items: center;
+                p{
+                    display: inline-block;
+                    transform: rotateZ(-45deg);
+                    font-size: 0.3rem;
+                    color: #6c6a6a;
+                    cursor: pointer;
+                }
+                img{
+                    width: 0.2rem;
+                    height: 0.2rem;
+                }
+            }
+            .user{
+                display: flex;
+                align-items: center;
+                img{
+                    margin-left: 0.1rem;
+                    width: 0.4rem;
+                    height: 0.4rem;
+                    border-radius: 50%;
+                }
+                span{
+                    font-size: 0.2rem;
+                    padding-left: 0.1rem;
+                }
+            }
+            ul{
+                padding-left: 0.1rem;
+                padding-bottom: 0.1rem;
+                margin-top: 0.1rem;
+                position: relative;
+                li{
+                    line-height: 0.3rem;
+                    img{
+                        vertical-align: middle;
+                        height: 0.17rem;
+                        
+                    }
+                    span{
+                        vertical-align: middle;
+                    }
+                }
+            }
+            .b-line::after{
+                position: absolute;
+                content: '';
+                bottom: 0;
+                left: 0;
+                width: calc(100% - 0.2rem);
+                margin-left: 0.1rem;
+                border-bottom: 0.01rem solid #d1cccc;
+            }
+            .bottom1{
+                background-color: #fff;
+                margin: 0.1rem;
+                padding: 0.1rem 0.1rem;
+                display: flex;
+                flex-wrap: wrap;
+                border-radius: 0.1rem;
+                a{
+                    
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    // justify-content: center;
+                    width: calc(100% / 3 - 0.1rem);
+                    padding: 0 0.05rem 0.1rem;
+                    text-align: center;
+                    img{
+                        width: 0.25rem;
+                        height: 0.25rem;
+                        padding-bottom: 0.05rem;
+                    }
+                    span{
+                        color: #6c6a6a;
+                        height: 1em;
+                        width: 100%;
+                        display: block;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        
+                    }
+                }
+            }
+            .bottom2{
+                display: flex;
+                align-items: center;
+                color: #6c6a6a;
+                justify-content: center;
+                img{
+                    width: 0.2rem;
+                    height: 0.2rem;
+                   
+                }
+            }
+            .bottom{
+                margin-top: 0.5rem;
+        
+            }
+        }
+
+    }
+    
+    .search{
+        height: 0.3rem;
+        background-color: rgba(204, 230, 210,0.5);
+        display: flex;
+        align-items: center;
+        width: 2.1rem;
+        border-radius: 0.1rem;
+        img{
+            width: 0.25rem;
+            height: 0.25rem;
+        }
+        input{
+            outline: none;
+            border: none;
+            padding: 0;
+            background-color: transparent;
+            // background-color: rgba(204, 230, 210,0.5);
+        }
+    }
+    .message{
+        img{
+            width: 0.3rem;
+            height: 0.3rem;
+        }
+    }
+}
+// 主体部分的tab
+main{
+    .main-tab{
+        position: relative;
+        background-color: #fff;
+        box-sizing: border-box;
+        padding-top: 0.15rem;
+        .selected{
+            position: absolute;
+            border-radius: 0.05rem;
+            left: 0.1rem;
+            bottom: 0;
+            border-bottom: 0.03rem solid #000;
+            width: 0.4rem;
+            transition: 0.3s;
+            transform: translateX(0);
+        }
+    }
+    #main-tabs{
+        padding: 0 0.1rem 0.1rem;
+        box-sizing: border-box;
+        display: flex;
+        position: relative;
+        &::after{
+            position: absolute;
+            display: block;
+            content: '';
+            border-bottom: 0.01rem #6c6a6a solid;
+            left: 0;
+            bottom: 0;
+            width: calc(100% - 0.2rem);
+            margin-left: 0.1rem;
+        }
+        
+        p{
+            font-size: 0.2rem;
+            margin-right: 0.1rem;
+            color: #6c6a6a;
+            position: relative;
+            cursor: pointer;
+            width: 0.4rem;
+        }
+        p.on{
+            color: #000;
+        }
+        
+    }
+}
+
+// 动态区域内容
+main>.dynatic-con{
+    margin-top: 0.4rem;
+    padding: 0 0.1rem;
+    box-sizing: border-box;
+    h2{
+        font-size: 0.25rem;
+        font-weight: 700;
+        .ellipsis(2);
+    }
+    .con-box{
+        background-color: #fff;
+        padding: 0.1rem;
+        box-sizing: border-box;
+        border-radius: 0.1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0.15rem;
+        .title{
+            box-sizing: border-box;
+            padding-left: 0.2rem;
+            margin-bottom: 0.1rem;
+            background-size: 0.16rem 0.16rem;
+            background-repeat: no-repeat;
+            background-image: url(../img/talk.png);
+        }
+        .page-box{
+            overflow: hidden;
+        }
+        .page{
+            color: #6c6a6a;
+            position: relative;
+            overflow: hidden;
+            span{
+                padding-left: 0.1rem;
+                font-size: 0.12rem;
+                color: #b1adad;
+            }
+        }
+        .page::before{
+            content: '';
+            display: inline-block;
+            width: 0.16rem;
+            height: 0.16rem;
+            background-image: url(../img/user_normal.png);
+            background-size: 0.16rem 0.16rem;
+            margin-right: 0.04rem;
+            border-radius: 50%;
+            overflow: hidden;
+
+        }
+    }
+}
+// 推荐区域内容
+main>.recommend{
+    display: none;
+    .con-box{
+        padding: 0.1rem;
+        box-sizing: border-box;
+        background-color: #fff;
+        margin-bottom: 0.1rem;
+        .user-top{
+            display: flex;
+            height: 0.45rem;
+            align-items: center;
+            justify-content: space-between;
+            .name{
+                img{
+                    width: 0.3rem;
+                    height: 0.3rem;
+                    vertical-align: middle;
+                    border-radius: 50%;
+                }
+                span{
+                    vertical-align: middle;
+                    padding-left: 0.05rem;
+                }
+            }
+            .eli{
+                width: 0.2rem;
+            }
+        }
+        .user-center{
+            .tag{
+                display: inline-block;
+                font-size: 0.14rem;
+                padding: 0.05rem 0.05rem 0.05rem 0.25rem;
+                background-image: url(../img/talk.png);
+                background-repeat: no-repeat;
+                background-size: 0.16rem 0.16rem;
+                background-position: 0.05rem center;
+                border-radius: 0.6rem;
+                color: #17c73b;
+                background-color: rgba(137, 232, 146, 0.5);
+            }
+            .page{
+                padding-top: 0.1rem;
+                .ellipsis(5);
+                line-height: 1.6;
+                // transition: 0.5s;
+            }
+            span{
+                color: #17c73b;
+                cursor: pointer;
+            }
+            img{
+                width: 100%;
+                height: 0.7rem;
+                margin-top: 0.1rem;
+            }
+        }
+        .user-bottom{
+            padding: 0 0.15rem;
+            display: flex;
+            justify-content: space-between;
+            color: #6c6a6a;
+            font-size: 0.2rem;
+            margin-top: 0.15rem;
+            .iconfont{
+                font-size: 0.2rem;
+            }
+        }
+    }
+    &>.con-box:last-of-type{
+        margin-bottom: 0.6rem;
+    }
+}
+// 推荐区域lunbo
+main>.recommend>.group{
+    background-color: #fff;
+    padding: 0.1rem;
+    margin-bottom: 0.1rem;
+    box-sizing: border-box;
+    h1{
+        font-size: 0.2rem;
+        font-weight: 700;
+        position: relative;
+        overflow: hidden;
+    }
+    .tag{
+        display: block;
+        color: #6c6a6a;
+        padding: 0.1rem 0;
+    }
+    .swiper-pagination{
+        position: absolute;
+        left:1.2rem;
+        right: 0;
+        top: 50%;
+        margin-top: -0.025rem;
+        display: inline-block;
+        font-size: 0;
+
+    }
+    .swiper-pagination-bullet{
+        width: 0.05rem;
+        height: 0.05rem;
+        border-radius: 50%;
+        background-color: rgba(61, 60, 60, 0.6);
+    }
+    .con-box{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+        .left{
+            display: flex;
+            line-height: 1.3;
+            img{
+                width: 0.5rem;
+                height: 0.5rem;
+                border-radius: 0.1rem
+            }
+            .msg{
+                width: 1.7rem;
+                padding-left: 0.05rem;
+                h2{
+                    .ellipsis(1);
+                }
+                p{
+                    color: #6c6a6a;
+                    .ellipsis(1)
+                }
+            }
+        }
+        .right{
+            padding: 0.05rem 0.07rem;
+            color: #03c32b;
+            background-color: #8ae39d87;
+            border-radius: 0.05rem;
+        }
+    }
+    .more{
+        text-align: center;
+        line-height: 0.5rem;
+        font-size: 0.18rem;
+        color: #03c32b;
+        position: relative;
+        &::after{
+            position: absolute;
+            content: '';
+            display: block;
+            width: ~'calc(100% - 0.2rem)';
+            margin-left: 0.1rem;
+            top: 0rem;
+            left: 0;
+            height: 0.01rem;
+            background-color: #b7b5b5;
+           
+        }
+    }
+}
+
+// 尾部导航
+footer{
+    // width: 100%;
+    position: fixed;
+    z-index: 9;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    .footer-wrap{
+        padding: 0 0.1rem;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 0.45rem;
+        a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .iconfont{
+                padding-bottom: 0.03rem;
+                font-size: 0.2rem;
+            }
+            span{
+                color: #6c6a6a;
+            }
+            
+        }
+        .index{
+            color: #03c32b;
+        }
+        .icon-shouye-tianchong{
+            color: #03c32b;
+        }
+    }
+}
